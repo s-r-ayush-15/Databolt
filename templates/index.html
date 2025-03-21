@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Quality Predictor</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="card">
             <div class="header">
                 <h1>Air Quality Predictor</h1>
                 <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line x1="6" y1="16" x2="6.01" y2="16"></line><line x1="10" y1="16" x2="10.01" y2="16"></line></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <line x1="22" y1="12" x2="2" y2="12"></line>
+                        <path
+                            d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
+                        </path>
+                        <line x1="6" y1="16" x2="6.01" y2="16"></line>
+                        <line x1="10" y1="16" x2="10.01" y2="16"></line>
+                    </svg>
                 </div>
             </div>
 
@@ -72,9 +83,24 @@
                 <h2>Prediction Result</h2>
                 <p id="prediction" class="prediction"></p>
                 <p class="description">Based on the provided environmental parameters</p>
+
+                <!-- Visualization Container -->
+                <div id="chartContainer" class="hidden">
+                    <h3>Air Quality Prediction Visualization</h3>
+                    <canvas id="airQualityChart"></canvas>
+                    <br>
+                    <h3>Pie Chart of Parameters</h3>
+                    <canvas id="pieChart"></canvas>
+                    <br>
+                    <h3>Radar Chart of Parameters</h3>
+                    <canvas id="radarChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Include the updated JavaScript -->
     <script src="../static/css/script.js"></script>
 </body>
+
 </html>
